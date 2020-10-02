@@ -122,7 +122,6 @@ h1 {
 
 .item {
   display: block;
-  position: absolute;
   width: 99px;
   height: 99px;
   margin: 5px;
