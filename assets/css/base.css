@@ -117,7 +117,6 @@ h1 {
 
 .grid {
   position: relative;
-  width: 878px;
   max-width: 100%;
   margin: 0 auto; }
 
@@ -178,3 +177,39 @@ h1 {
       width: calc(50% - 10px); }
     .item.h2 {
       height: calc(50vw - 10px); } }
+
+@-webkit-keyframes loop {
+  0% {
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%); }
+  to {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%); } }
+
+@keyframes loop {
+  0% {
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%); }
+  to {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%); } }
+
+@-webkit-keyframes loop2 {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0); }
+  to {
+    -webkit-transform: translateX(-200%);
+    transform: translateX(-200%); } }
+
+@keyframes loop2 {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0); }
+  to {
+    -webkit-transform: translateX(-200%);
+    transform: translateX(-200%); } }
+
+.item {
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused; }

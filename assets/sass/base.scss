@@ -92,7 +92,7 @@ h1{
 
 .grid {
   position: relative;
-  width:878px;
+  // width:878px;
   max-width:100%;
   margin:0 auto;
 }
@@ -173,4 +173,29 @@ h1{
       height:calc(50vw - 10px);
     }
   }
+}
+
+
+
+@keyframes loop {
+  0% {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes loop2 {
+  0% {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-200%);
+  }
+}
+
+
+.item {
+  animation-play-state: paused;
 }
