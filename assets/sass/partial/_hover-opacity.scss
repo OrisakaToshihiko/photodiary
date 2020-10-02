@@ -1,0 +1,87 @@
+/// hover-opacity
+/// 汎用的に使用するホバースタイル
+@mixin hover-opacity($ms: $hover-opacity-ms, $ratio: $hover-opacity-ratio) {
+    transition: opacity $ms * 1ms;
+
+    &:hover {
+        opacity: $ratio;
+    }
+}
+
+/// hover-opacity-touch-device-disabled
+/// 汎用的に使用するホバースタイルで、iosおよびandroidの場合にホバー効果をなしにする
+@mixin hover-opacity-touch-device-disabled($ms: $hover-opacity-ms, $ratio: $hover-opacity-ratio, $original-ratio: 1) {
+    transition: opacity $ms * 1ms;
+
+    &:hover {
+        opacity: $ratio;
+    }
+
+    @at-root {
+        .ios &:hover,
+        .android &:hover {
+            opacity: $original-ratio;
+        }
+    }
+}
+
+/// hover-opacity-ios-disabled
+/// 汎用的に使用するホバースタイルで、iosの場合にホバー効果をなしにする
+@mixin hover-opacity-ios-disabled($ms: $hover-opacity-ms, $ratio: $hover-opacity-ratio, $original-ratio: 1) {
+    transition: opacity $ms * 1ms;
+
+    &:hover {
+        opacity: $ratio;
+    }
+
+    @at-root {
+        .ios &:hover {
+            opacity: $original-ratio;
+        }
+    }
+}
+
+/// hover-opacity-delegate
+/// 汎用的に使用するホバースタイルで、先祖要素がホバーした場合にホバースタイルが有効になる
+@mixin hover-opacity-delegate($selector, $ms: $hover-opacity-ms, $ratio: $hover-opacity-ratio) {
+    transition: opacity $ms * 1ms;
+
+    #{$selector}:hover & {
+        opacity: $ratio;
+    }
+}
+
+/// hover-opacity-touch-device-disabled-delegate
+/// 汎用的に使用するホバースタイルで、先祖要素がホバーした場合にホバースタイルが有効になる
+/// iosおよびandroidの場合にホバー効果をなしにする
+@mixin hover-opacity-touch-device-disabled-delegate($selector, $ms: $hover-opacity-ms, $ratio: $hover-opacity-ratio, $original-ratio: 1) {
+    transition: opacity $ms * 1ms;
+
+    #{$selector}:hover & {
+        opacity: $ratio;
+    }
+
+    @at-root {
+        .ios #{$selector}:hover &,
+        .android #{$selector}:hover & {
+            opacity: $original-ratio;
+        }
+    }
+}
+
+/// hover-opacity-ios-disabled-delegate
+/// 汎用的に使用するホバースタイルで、先祖要素がホバーした場合にホバースタイルが有効になる
+/// iosの場合にホバー効果をなしにする
+@mixin hover-opacity-ios-disabled-delegate($selector, $ms: $hover-opacity-ms, $ratio: $hover-opacity-ratio, $original-ratio: 1) {
+    transition: opacity $ms * 1ms;
+
+    #{$selector}:hover & {
+        opacity: $ratio;
+    }
+
+    @at-root {
+        .ios #{$selector}:hover & {
+            opacity: $original-ratio;
+        }
+    }
+}

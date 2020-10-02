@@ -1,0 +1,117 @@
+// ==========================================================
+// Name:
+//     _config.scss
+//
+// Description:
+//     サイト全体に共通するデザインとスタイルの設定を記述する
+//     このファイルに記述するコメントは、１行コメントの「//」を使用する
+//     「/* ~~ */」の複数行コメントは、CSSとして出力されるため使用しない
+//
+// Contents:
+//     design config
+//     media query
+// ==========================================================
+
+// ---------------------------------------------
+//   design config
+//----------------------------------------------
+
+//   design width
+//----------------------------------------------
+$design-width-pc: 1440;
+// $design-width-tb: 900;
+$design-width-sp: 750;
+
+//   contents width
+//   contents side padding を除いた部分の幅
+//----------------------------------------------
+$contents-width-pc: 1100;
+// $contents-width-tb: 880;
+$contents-width-sp: 670;
+
+//   contents side padding
+//----------------------------------------------
+$contents-side-padding-pc: 5;
+// $contents-side-padding-tb: 10;
+$contents-side-padding-sp: 5;
+
+//   min width
+//----------------------------------------------
+$minwidth-pc: $contents-width-pc + ($contents-side-padding-pc * 2);
+// $minwidth-tb: $design-width-sp + 1;
+$minwidth-sp: 320;
+
+//   breakpoints
+//----------------------------------------------
+// $breakpoint-pc: 999;
+// $breakpoint-tb: 899;
+$breakpoint-sp: 750;
+
+//   color
+//----------------------------------------------
+$base: #674982;
+$black1: #000;
+$black2: #282728;
+$gray1: #bfbfbf;
+$gray2: #787878;
+$gray3: #818181;
+$gray4: #464646;
+$gray5: #e6e6e6;
+$gray6: #6c6c6c;
+$gray7: #eeeeee;
+$gray8: #f5f5f5;
+$gray9: #c8c8c8;
+$gray10: #dcdcdc;
+$gray11: #838383;
+$gray12: #b4b4b4;
+$white1: #fff;
+$red1: #e60000;
+$red2: #e7250e;
+$red3: #c80000;
+$red4: #C42F4E;
+$green1: #009a04;
+$green2: #0a930a;
+$green3: #4EA8AF;
+$blue1: #367fd9;
+$blue2: #387dd5;
+$blue3: #4593CE;
+$yellow1: #e2aa00;
+$yellow2: #b98d08;
+$yellow3: #ffa000;
+$yellow4: #F1D74F;
+$event: #C42F4E;
+$life: #4593CE;
+$society: #F1D74F;
+$wellness: #94D449;
+$other: #674982;
+
+
+//   line height
+//----------------------------------------------
+$line-height-pc: 1.5;
+// $line-height-tb: 1.5;
+$line-height-sp: 1.5;
+
+//   font
+//----------------------------------------------
+$root-fz-pc: 14;
+// $root-fz-tb: 14;
+$root-fz-sp: 14;
+$root-fc: $black1;
+$root-ff: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+
+//   hover
+//----------------------------------------------
+$hover-opacity-ratio: 0.6;
+$hover-opacity-ms: 300;
+
+//   fixed header height
+//----------------------------------------------
+$fixed-header-height-pc: 0;
+$fixed-header-height-tb: 0;
+$fixed-header-height-sp: 0;
+
+// ---------------------------------------------
+//   media query
+//----------------------------------------------
+$retina: "only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx)";

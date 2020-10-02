@@ -1,0 +1,38 @@
+// PC/SPの2種類のレイアウトの区別で要素の出しわけが必要な場合と、
+// PC/TB/SPの3種類のレイアウトで区別で要素の出しわけが必要な場合とで、
+// 使用するスタイルを変更する
+// 使用しないスタイルは、CSSに出力されないよう「//」(ダブルスラッシュ)で
+// コメントアウトする
+
+// ---------------------------------------------
+//   PC/SP レスポンシブの出しわけスタイル
+//----------------------------------------------
+@media screen and (min-width: #{($breakpoint-sp + 1)}px) {
+    .pc-hide {
+        display: none !important;
+    }
+}
+@media screen and (max-width: #{$breakpoint-sp}px) {
+    .sp-hide {
+        display: none !important;
+    }
+}
+
+// ---------------------------------------------
+//   PC/TB/SP レスポンシブの出しわけスタイル
+//----------------------------------------------
+// @media screen and (min-width: #{($breakpoint-tb + 1)}px) {
+//     .pc-hide {
+//         display: none !important;
+//     }
+// }
+// @media screen and (min-width: #{($breakpoint-sp + 1)}px) and (max-width: #{$breakpoint-tb}px) {
+//     .tb-hide {
+//         display: none !important;
+//     }
+// }
+// @media screen and (max-width: #{$breakpoint-sp}px) {
+//     .sp-hide {
+//         display: none !important;
+//     }
+// }

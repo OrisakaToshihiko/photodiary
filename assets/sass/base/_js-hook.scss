@@ -1,0 +1,12 @@
+/* ---------------------------------------------
+*   js-tel-disabled
+--------------------------------------------- */
+.js-tel-disabled {
+    cursor: default;
+    outline: none;
+
+    &:hover {
+        text-decoration: none;
+        opacity: 1;
+    }
+}

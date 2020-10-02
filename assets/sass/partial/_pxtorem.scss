@@ -1,0 +1,16 @@
+/// pxtorem
+/// pxのフォントサイズをrem単位に変換する関数
+/// @param {number} $value  - rem単位に変換するpx単位の値
+/// @param {string} $device - 基準となるデバイス名
+/// @return {string} rem単位のフォントサイズ
+@function pxtorem($value, $device) {
+    @if $device == 'pc' {
+        @return ($value / $root-fz-pc) * 1rem;
+    }
+    @if $device == 'tb' {
+        @return ($value / $root-fz-tb) * 1rem;
+    }
+    @if $device == 'sp' {
+        @return ($value / $root-fz-sp) * 1rem;
+    }
+}

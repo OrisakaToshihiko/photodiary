@@ -1,0 +1,69 @@
+/* ---------------------------------------------
+*   html, body
+--------------------------------------------- */
+html,
+body {
+    color: $root-fc;
+    font-size: $root-fz-pc * 1px;
+    font-family: $root-ff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+
+    @media screen and (max-width: #{$breakpoint-sp}px) {
+        font-size: pxtovw($root-fz-sp, 'sp');
+    }
+}
+body {
+    line-height: $line-height-pc;
+    min-width: $minwidth-pc * 1px;
+
+    @media screen and (max-width: #{$breakpoint-sp}px) {
+        line-height: $line-height-sp;
+        min-width: $minwidth-sp * 1px;
+    }
+}
+
+/* ---------------------------------------------
+*   <a> tag
+--------------------------------------------- */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ---------------------------------------------
+*   <img> tag
+--------------------------------------------- */
+img {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    vertical-align: bottom;
+}
+
+/* ---------------------------------------------
+*   button 初期化
+--------------------------------------------- */
+button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    appearance: none;
+}
+
+/* ---------------------------------------------
+*   クリック後の点線を削除
+--------------------------------------------- */
+a,a:focus {
+  outline:none;
+}
+button,input,input:focus {
+  outline:none;
+}
+input::-moz-focus-inner,
+button::-moz-focus-inner  {
+  border:none;
+}

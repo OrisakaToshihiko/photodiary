@@ -1,0 +1,16 @@
+/// pxtovw
+/// pxのフォントサイズをvw単位に変換する関数
+/// @param {number} $value  - vw単位に変換するpx単位の値
+/// @param {string} $device - 基準となるデバイス名
+/// @return {string} vw単位の値
+@function pxtovw($value, $device) {
+    @if $device == 'pc' {
+        @return ($value * 100 / $design-width-pc) * 1vw;
+    }
+    @if $device == 'tb' {
+        @return ($value * 100 / $design-width-tb) * 1vw;
+    }
+    @if $device == 'sp' {
+        @return ($value * 100 / $design-width-sp) * 1vw;
+    }
+}

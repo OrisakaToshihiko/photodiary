@@ -1,0 +1,180 @@
+@charset "UTF-8";
+/* ==========================================================
+Name:
+    base.css
+
+Description:
+    サイト全体に共通する設定を記述する
+
+Contents:
+    base settings
+    javascript style hooks
+    base blocks
+========================================================== */
+/* ==========================================================
+*
+*   base settings
+*
+========================================================== */
+/* ---------------------------------------------
+*   html, body
+--------------------------------------------- */
+html,
+body {
+  color: #000;
+  font-size: 14px;
+  font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%; }
+  @media screen and (max-width: 750px) {
+    html,
+    body {
+      font-size: 1.86667vw; } }
+
+body {
+  line-height: 1.5;
+  min-width: 1110px; }
+  @media screen and (max-width: 750px) {
+    body {
+      line-height: 1.5;
+      min-width: 320px; } }
+
+/* ---------------------------------------------
+*   <a> tag
+--------------------------------------------- */
+a {
+  color: inherit;
+  text-decoration: none; }
+
+/* ---------------------------------------------
+*   <img> tag
+--------------------------------------------- */
+img {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  vertical-align: bottom; }
+
+/* ---------------------------------------------
+*   button 初期化
+--------------------------------------------- */
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; }
+
+/* ---------------------------------------------
+*   クリック後の点線を削除
+--------------------------------------------- */
+a, a:focus {
+  outline: none; }
+
+button, input, input:focus {
+  outline: none; }
+
+input::-moz-focus-inner,
+button::-moz-focus-inner {
+  border: none; }
+
+/* ==========================================================
+*
+*   javascript style hooks
+*
+========================================================== */
+/* ==========================================================
+*
+*   base blocks
+*
+========================================================== */
+*:before, *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0; }
+
+body {
+  font-family: Arial, "Hiragino Kaku Gothic Pro W3", Meiryo, sans-serif;
+  background-color: #fff;
+  color: #999;
+  text-align: center; }
+  body a, body a:visited {
+    color: #999;
+    text-decoration: none; }
+  body a:hover {
+    color: #777; }
+
+h1 {
+  font-size: 36px;
+  font-family: "Montserrat", sans-serif;
+  color: #53E2E4;
+  margin: 10px auto 30px; }
+
+.grid {
+  position: relative;
+  width: 878px;
+  max-width: 100%;
+  margin: 0 auto; }
+
+.item {
+  display: block;
+  position: absolute;
+  width: 99px;
+  height: 99px;
+  margin: 5px;
+  z-index: 1;
+  cursor: move; }
+  .item.blue .custom-content {
+    border-color: #0CAAF5;
+    color: #0CAAF5; }
+  .item.red .custom-content {
+    border-color: #F54487;
+    color: #F54487; }
+  .item.green .custom-content {
+    border-color: #00DE73;
+    color: #00DE73; }
+  .item.w2 {
+    width: 208px; }
+  .item.h2 {
+    height: 208px; }
+
+.item-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: table; }
+
+.custom-content {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  background: #fff;
+  color: #666;
+  border: 2px solid;
+  border-radius: 3px; }
+
+.item.muuri-item-dragging {
+  z-index: 3; }
+
+@media (max-width: 877px) {
+  .item {
+    width: calc(33.33% - 11px);
+    height: calc(33.33vw - 11px); }
+    .item.w2 {
+      width: calc(33.33% - 11px); }
+    .item.h2 {
+      height: calc(33.33vw - 11px); } }
+
+@media (max-width: 640px) {
+  .item {
+    width: calc(50% - 10px);
+    height: calc(50vw - 10px); }
+    .item.w2 {
+      width: calc(50% - 10px); }
+    .item.h2 {
+      height: calc(50vw - 10px); } }

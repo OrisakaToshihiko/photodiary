@@ -1,0 +1,59 @@
+/* ---------------------------------------------
+*   margin-top
+--------------------------------------------- */
+@for $i from 0 through 50 {
+    @if $i == 0 {
+        .mgt-pc--0 {
+            margin-top: 0 !important;
+        }
+    }
+    @else {
+        .mgt-pc--#{$i * 5} {
+            margin-top:#{$i * 5}px !important;
+        }
+    }
+}
+@media screen and (max-width: #{$breakpoint-sp}px) {
+    @for $i from 0 through 50 {
+        @if $i == 0 {
+            .mgt-sp--0 {
+                margin-top: 0 !important;
+            }
+        }
+        @else {
+            .mgt-sp--#{$i * 5} {
+                margin-top: pxtovw($i * 5, 'sp') !important;
+            }
+        }
+    }
+}
+
+/* ---------------------------------------------
+*   margin-bottom
+--------------------------------------------- */
+@for $i from 0 through 50 {
+    @if $i == 0 {
+        .mgb-pc--0 {
+            margin-bottom: 0 !important;
+        }
+    }
+    @else {
+        .mgb-pc--#{$i * 5} {
+            margin-bottom: #{$i * 5}px !important;
+        }
+    }
+}
+@media screen and (max-width: #{$breakpoint-sp}px) {
+    @for $i from 0 through 50 {
+        @if $i == 0 {
+            .mgb-sp--0 {
+                margin-bottom: 0 !important;
+            }
+        }
+        @else {
+            .mgb-sp--#{$i * 5} {
+                margin-bottom: pxtovw($i * 5, 'sp') !important;
+            }
+        }
+    }
+}

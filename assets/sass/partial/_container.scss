@@ -1,0 +1,119 @@
+/// container
+/// 汎用的なコンテナスタイル
+/// @param {map} $args                      - コンテナのスタイルを決定する設定
+/// @param {string} $args.divice            - 基準となるデバイス名
+/// @param {string} $args.unit              - 出力するスタイルの単位 ('px'または'percentage')
+/// @param {number} $args.max-width         - コンテナの幅 border-boxがtrueの場合には、side-paddingの値を加算して出力する
+/// @param {number|bool} $args.side-padding - 横方向のパディング値 falseの場合スタイルごと出力しない
+/// @param {bool} $args.border-box          - 計算にbox-sizing: border-box;を使用するか
+/// @param {bool} $args.side-margin         - 横マージンにautoを指定するか
+@mixin container($args: ()) {
+    // 念のため、下記に引数$argsの雛形をコメントとして残す
+    $default: (
+        // divce: $argsで指定必須
+        // unit: $argsで指定必須
+        // 'max-width': $argsで指定必須,
+        // 'side-padding': $argsで指定必須,
+        // 'border-box': $argsで指定必須,
+        // 'side-margin': $argsで指定必須
+    );
+
+    $marged: map-merge($default, $args);
+
+    // 旧API使用時の警告
+    @if map_has_key($marged, 'width') == true {
+        @warn "@mixin container() の width は廃止されました。追加スタイルとして指定してください。"
+    }
+
+    // max-widthの出力
+    @if map-get($marged, 'max-width') != false {
+        max-width: _get_container_max_width(
+            map-get($marged, 'device'),
+            map-get($marged, 'unit'),
+            map-get($marged, 'max-width'),
+            map-get($marged, 'side-padding'),
+            map-get($marged, 'border-box')
+        );
+    }
+
+    // side-paddingの出力
+    @if map-get($marged, 'side-padding') != false {
+        $side-padding: _get_container_side_padding(
+            map-get($marged, 'device'),
+            map-get($marged, 'unit'),
+            map-get($marged, 'side-padding')
+        );
+
+        padding-right: $side-padding;
+        padding-left: $side-padding;
+    }
+
+    // box-sizingの出力
+    @if map-get($marged, 'border-box') == true {
+        box-sizing: border-box;
+    }
+
+    // marginの出力
+    @if map-get($marged, 'side-margin') {
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+/// _get_container_max_width
+/// @mixin container()の補助関数で、幅を計算して返す
+/// @param {string} $device            - 基準となるデバイス名
+/// @param {string} $unit              - 出力するスタイルの単位 ('px'または'percentage')
+/// @param {number} $max-width         - コンテナの幅 border-boxがtrueの場合には、side-paddingの値を加算して出力する
+/// @param {number|bool} $side-padding - 横方向のパディング値 falseの場合スタイルごと出力しない
+/// @param {bool} $args.border-box     - 計算にbox-sizing: border-box;を使用するか
+/// @return {string} コンテナのmax-widthスタイル
+@function _get_container_max_width($device, $unit, $max-width, $side-padding, $border-box) {
+    $adjust-width: $max-width;
+
+    @if $side-padding != false and $border-box == true {
+        $adjust-width: $max-width + ($side-padding * 2);
+    }
+
+    @if $unit == 'px' {
+        @return $adjust-width * 1px;
+    }
+    @else if $unit == 'percentage' {
+        @if $device == 'pc' {
+            @return percentage($adjust-width / $design-width-pc);
+        }
+        @else if $device == 'tb' {
+            @return percentage($adjust-width / $design-width-tb);
+        }
+        @else if $device == 'sp' {
+            @return percentage($adjust-width / $design-width-sp);
+        }
+    }
+
+    @error "_get_container_max_width()関数でエラーが発生しました";
+}
+
+/// _get_container_side_padding
+/// @mixin container()の補助関数で、横方向のパディングを計算して返す
+/// @param {string} $device       - 基準となるデバイス名
+/// @param {string} $unit         - 出力するスタイルの単位 ('px'または'percentage')
+/// @param {number} $side-padding - 横方向のパディング値
+/// @return {string} コンテナの横方向paddingスタイル
+@function _get_container_side_padding($device, $unit, $side-padding) {
+    @if $unit == 'px' {
+        @return $side-padding * 1px;
+    }
+    @else {
+        @if $device == 'pc' {
+            @return percentage($side-padding / $design-width-pc);
+        }
+        @else if $device == 'tb' {
+            @return percentage($side-padding / $design-width-tb);
+        }
+        @else if $device == 'sp' {
+            @return percentage($side-padding / $design-width-sp);
+        }
+    }
+
+    @error "_get_container_side_padding()関数でエラーが発生しました";
+}

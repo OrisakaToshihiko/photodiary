@@ -1,0 +1,204 @@
+/* ---------------------------------------------
+*   footer
+--------------------------------------------- */
+.footer {
+    background-color: $gray7;
+
+    &__inner {
+        position: relative;
+        display: flex;
+        align-items: flex-start;
+        max-width: 1400px;
+        margin-right: auto;
+        margin-left: auto;
+        padding: 40px 0 50px 40px;
+        box-sizing: border-box;
+    }
+
+    @media screen and (max-width: #{$breakpoint-sp}px) {
+        &__inner {
+            width: pxtovw(670,'sp');
+            flex-wrap: wrap;
+            padding: pxtovw(45,'sp') 0 pxtovw(90,'sp');
+        }
+    }
+}
+
+/*  footer-logo
+--------------------------------------------- */
+.footer-logo {
+    width: 71px;
+    margin-top: 3px;
+    margin-right: 42px;
+
+    &__link {
+        display: block;
+
+        @include hover-opacity;
+    }
+
+
+    @media screen and (max-width: #{$breakpoint-sp}px) {
+        width: pxtovw(93,'sp');
+        margin-right: pxtovw(58,'sp');
+    }
+}
+
+/*  footer-nav-anchor
+--------------------------------------------- */
+.footer-nav-anchor {
+    padding-right: 55px;
+    padding-bottom: 8px;
+    border-right: 1px solid $gray1;
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        width: 210px;
+    }
+
+    &__item {
+        width: 105px;
+        margin-top: 9px;
+        line-height: 1;
+
+        &:nth-of-type(-n+2) {
+            margin-top: 0;
+        }
+    }
+
+    &__link {
+        @include hover-opacity;
+    }
+
+    &__txt {
+        color: $black2;
+        font-size: 12px;
+        line-height: 1;
+        letter-spacing: 0.02em;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    @media screen and (max-width: #{$breakpoint-sp}px) {
+        padding-right: 0;
+        padding-bottom: pxtovw(50,'sp');
+        border-right: none;
+
+        &__list {
+            width: pxtovw(380,'sp');
+        }
+
+        &__item {
+            width: pxtovw(170,'sp');
+            margin-top: pxtovw(24,'sp');
+        }
+
+        &__txt {
+            font-size: pxtovw(22,'sp');
+        }
+    }
+}
+
+/*  footer-nav-link
+--------------------------------------------- */
+.footer-nav-link {
+    padding-left: 42px;
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        width: 360px;
+    }
+
+    &__item {
+        width: 180px;
+        margin-top: 20px;
+        line-height: 1;
+
+        &:nth-of-type(-n+2) {
+            margin-top: 0;
+        }
+    }
+
+    &__link {
+        position: relative;
+
+        @include hover-opacity;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 56%;
+            right: -20px;
+            transform: translateY(-50%);
+            width: 11px;
+            height: 9px;
+            background: url(/img/ico/ico_window.png) 0 0 no-repeat;
+            background-size: 100% auto;
+        }
+    }
+
+    &__txt {
+        color: $black2;
+        font-size: 12px;
+        line-height: 1;
+        letter-spacing: 0.02em;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    @media screen and (max-width: #{$breakpoint-sp}px) {
+        padding-top: pxtovw(54,'sp');
+        padding-left: 0;
+        border-top: 1px solid $gray9;
+
+        &__list {
+            width: 100%;
+        }
+
+        &__link {
+
+            &:after {
+                top: 47%;
+                right: pxtovw(-32,'sp');
+                width: pxtovw(20,'sp');
+                height: pxtovw(16,'sp');
+            }
+        }
+
+        &__item {
+            width: pxtovw(320,'sp');
+            margin-top: pxtovw(24,'sp');
+
+            &--nocolumn {
+                width: 100%;
+            }
+        }
+
+        &__txt {
+            font-size: pxtovw(22,'sp');
+        }
+    }
+}
+
+/*  footer-copyright
+--------------------------------------------- */
+.footer-copyright {
+    position: absolute;
+    right: 20px;
+    bottom: 12px;
+
+    &__txt {
+        color: $gray4;
+        font-size: 12px;
+        line-height: 1;
+    }
+
+    @media screen and (max-width: #{$breakpoint-sp}px) {
+        right: pxtovw(-8,'sp');
+        bottom: pxtovw(20,'sp');
+
+        &__txt {
+            font-size: pxtovw(16,'sp');
+        }
+    }
+}

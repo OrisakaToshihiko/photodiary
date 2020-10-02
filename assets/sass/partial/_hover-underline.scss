@@ -1,0 +1,185 @@
+/// hover-underline
+/// 汎用的に使用するホバースタイル
+/// ホバー時に下線を表示する
+@mixin hover-underline() {
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+/// hover-underline-touch-device-disabled
+/// 汎用的に使用するホバースタイル
+/// ホバー時に下線を表示する
+/// タッチデバイスの場合、スタイルを無効にする
+@mixin hover-underline-touch-device-disabled() {
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+    @at-root {
+        .ios &:hover,
+        .android &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+/// hover-underline-ios-disabled
+/// 汎用的に使用するホバースタイル
+/// ホバー時に下線を表示する
+/// iOSデバイスの場合、スタイルを無効にする
+@mixin hover-underline-ios-disabled() {
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+    @at-root {
+        .ios &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+/// hover-underline-delegate
+/// 汎用的に使用するホバースタイル
+/// 先祖要素がホバーした場合に下線を表示する
+@mixin hover-underline-delegate($selector) {
+
+    #{$selector}:hover & {
+        text-decoration: underline;
+    }
+}
+
+/// hover-underline-delegate-touch-device-disabled
+/// 汎用的に使用するホバースタイル
+/// 先祖要素がホバーした場合に下線を表示する
+/// タッチデバイスの場合、スタイルを無効にする
+@mixin hover-underline-touch-device-disabled-delegate($selector) {
+
+    #{$selector}:hover & {
+        text-decoration: underline;
+    }
+
+    @at-root {
+        .ios #{$selector}:hover &,
+        .android #{$selector}:hover & {
+            text-decoration: none;
+        }
+    }
+}
+
+/// hover-underline-delegate-ios-disabled
+/// 汎用的に使用するホバースタイル
+/// 先祖要素がホバーした場合に下線を表示する
+/// iOSデバイスの場合、スタイルを無効にする
+@mixin hover-underline-ios-disabled-delegate($selector) {
+
+    #{$selector}:hover & {
+        text-decoration: underline;
+    }
+
+    @at-root {
+        .ios #{$selector}:hover & {
+            text-decoration: none;
+        }
+    }
+}
+
+/// hover-underline-none
+/// 汎用的に使用するホバースタイル
+/// 通常時、下線を表示し、ホバー時に下線を非表示にする
+@mixin hover-underline-none() {
+    text-decoration: underline;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+/// hover-underline-none-touch-device-disabled
+/// 汎用的に使用するホバースタイル
+/// 通常時、下線を表示し、ホバー時に下線を非表示にする
+/// タッチデバイスの場合、スタイルを無効にする
+@mixin hover-underline-none-touch-device-disabled() {
+    text-decoration: underline;
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    @at-root {
+        .ios &:hover,
+        .android &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+/// hover-underline-none-ios-disabled
+/// 汎用的に使用するホバースタイル
+/// 通常時、下線を表示し、ホバー時に下線を非表示にする
+/// iOSデバイスの場合、スタイルを無効にする
+@mixin hover-underline-none-ios-disabled() {
+    text-decoration: underline;
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    @at-root {
+        .ios &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+/// hover-underline-none-delegate
+/// 汎用的に使用するホバースタイル
+/// 先祖要素がホバーした場合に下線を非表示にする
+@mixin hover-underline-none-delegate($selector) {
+    text-decoration: underline;
+
+    #{$selector}:hover & {
+        text-decoration: none;
+    }
+}
+
+/// hover-underline-none-delegate-touch-device-disabled
+/// 汎用的に使用するホバースタイル
+/// 先祖要素がホバーした場合に下線を非表示にする
+/// タッチデバイスの場合、スタイルを無効にする
+@mixin hover-underline-none-touch-device-disabled-delegate($selector) {
+    text-decoration: underline;
+
+    #{$selector}:hover & {
+        text-decoration: none;
+    }
+
+    @at-root {
+        .ios #{$selector}:hover &,
+        .android #{$selector}:hover & {
+            text-decoration: underline;
+        }
+    }
+}
+
+/// hover-underline-none-delegate-ios-disabled
+/// 汎用的に使用するホバースタイル
+/// 先祖要素がホバーした場合に下線を非表示にする
+/// iOSデバイスの場合、スタイルを無効にする
+@mixin hover-underline-none-ios-disabled-delegate($selector) {
+    text-decoration: underline;
+
+    #{$selector}:hover & {
+        text-decoration: none;
+    }
+
+    @at-root {
+        .ios #{$selector}:hover & {
+            text-decoration: underline;
+        }
+    }
+}
