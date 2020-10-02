@@ -119,9 +119,12 @@ h1 {
   position: relative;
   max-width: 100%;
   margin: 0 auto; }
+  .grid ul {
+    position: relative; }
 
 .item {
   display: block;
+  position: absolute;
   width: 99px;
   height: 99px;
   margin: 5px;
@@ -140,6 +143,9 @@ h1 {
     width: 208px; }
   .item.h2 {
     height: 208px; }
+  .item:hover {
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused; }
 
 .item-content {
   position: relative;
@@ -177,37 +183,29 @@ h1 {
     .item.h2 {
       height: calc(50vw - 10px); } }
 
+.grid {
+  -webkit-animation: loop 50s linear infinite;
+  animation: loop 50s linear infinite; }
+
 @-webkit-keyframes loop {
   0% {
-    -webkit-transform: translateX(100%);
-    transform: translateX(100%); }
+    -webkit-transform: translate(10%, 100%);
+    transform: translate(10%, 100%); }
   to {
-    -webkit-transform: translateX(-100%);
-    transform: translateX(-100%); } }
+    -webkit-transform: translate(-10%, -100%);
+    transform: translate(-10%, -100%); } }
 
 @keyframes loop {
   0% {
-    -webkit-transform: translateX(100%);
-    transform: translateX(100%); }
+    -webkit-transform: translate(10%, 100%);
+    transform: translate(10%, 100%); }
   to {
-    -webkit-transform: translateX(-100%);
-    transform: translateX(-100%); } }
+    -webkit-transform: translate(-10%, -100%);
+    transform: translate(-10%, -100%); } }
 
-@-webkit-keyframes loop2 {
-  0% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0); }
-  to {
-    -webkit-transform: translateX(-200%);
-    transform: translateX(-200%); } }
-
-@keyframes loop2 {
-  0% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0); }
-  to {
-    -webkit-transform: translateX(-200%);
-    transform: translateX(-200%); } }
+.grid li:last-child {
+  -webkit-animation: loop2 50s linear infinite;
+  animation: loop2 50s linear infinite; }
 
 .item {
   -webkit-animation-play-state: paused;

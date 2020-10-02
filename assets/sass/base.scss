@@ -95,10 +95,14 @@ h1{
   // width:878px;
   max-width:100%;
   margin:0 auto;
+  ul {
+    // display: flex;
+    position: relative;
+  }
 }
 .item {
   display: block;
-  // position: absolute;
+  position: absolute;
   width:99px;
   height:99px;
   margin: 5px;
@@ -127,6 +131,9 @@ h1{
   }
   &.h2{
     height:208px;
+  }
+  &:hover {
+    animation-play-state: paused;
   }
 }
 .item-content {
@@ -175,26 +182,23 @@ h1{
   }
 }
 
-
+.grid {
+  animation: loop 50s linear infinite;
+}
 
 @keyframes loop {
   0% {
-    transform: translateX(100%);
+    transform: translate(10%,100%);
   }
   to {
-    transform: translateX(-100%);
+    transform: translate(-10%,-100%);
   }
 }
 
-@keyframes loop2 {
-  0% {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-200%);
-  }
-}
 
+.grid li:last-child {
+  animation: loop2 50s linear infinite;
+}
 
 .item {
   animation-play-state: paused;
