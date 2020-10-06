@@ -182,31 +182,3 @@ h1 {
       width: calc(50% - 10px); }
     .item.h2 {
       height: calc(50vw - 10px); } }
-
-.grid {
-  -webkit-animation: loop 50s linear infinite;
-  animation: loop 50s linear infinite; }
-
-@-webkit-keyframes loop {
-  0% {
-    -webkit-transform: translate(10%, 100%);
-    transform: translate(10%, 100%); }
-  to {
-    -webkit-transform: translate(-10%, -100%);
-    transform: translate(-10%, -100%); } }
-
-@keyframes loop {
-  0% {
-    -webkit-transform: translate(10%, 100%);
-    transform: translate(10%, 100%); }
-  to {
-    -webkit-transform: translate(-10%, -100%);
-    transform: translate(-10%, -100%); } }
-
-.grid li:last-child {
-  -webkit-animation: loop2 50s linear infinite;
-  animation: loop2 50s linear infinite; }
-
-.item {
-  -webkit-animation-play-state: paused;
-  animation-play-state: paused; }

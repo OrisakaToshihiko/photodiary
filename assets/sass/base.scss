@@ -182,24 +182,24 @@ h1{
   }
 }
 
-.grid {
-  animation: loop 50s linear infinite;
-}
+// .grid {
+//   animation: loop 50s linear infinite;
+// }
 
-@keyframes loop {
-  0% {
-    transform: translate(10%,100%);
-  }
-  to {
-    transform: translate(-10%,-100%);
-  }
-}
+// @keyframes loop {
+//   0% {
+//     transform: translate(10%,100%);
+//   }
+//   to {
+//     transform: translate(-10%,-100%);
+//   }
+// }
 
 
-.grid li:last-child {
-  animation: loop2 50s linear infinite;
-}
+// .grid li:last-child {
+//   animation: loop2 50s linear infinite;
+// }
 
-.item {
-  animation-play-state: paused;
-}
+// .item {
+//   animation-play-state: paused;
+// }
