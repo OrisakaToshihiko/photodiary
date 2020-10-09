@@ -16,47 +16,53 @@
     <main>
       <h1>Grid Layout by Muuri.js</h1>
       <div>
+          <select class="grid-control-field filter-field form-control">
+              <option value="" selected="">All</option>
+              <option value="red">Red</option>
+              <option value="blue">Blue</option>
+              <option value="green">Green</option>
+            </select>
         <ul class="grid">
-        <li class="item blue">
+        <li class="item blue" data-color="blue">
           <div class="item-content">
             <!-- Safe zone, enter your custom markup -->
               <div class="custom-content">
-              Item 1
+              A Item 1
               </div>
             <!-- Safe zone ends -->
           </div>
         </li>
         
-        <li class="item red">
+        <li class="item red" data-color="red">
           <div class="item-content">
             <div class="custom-content">
-              Item 2
+             C Item 2
             </div>
           </div>
         </li>
 
-        <li class="item green">
+        <li class="item green" data-color="green">
           <div class="item-content">
             <div class="custom-content">
-              Item 3
+            B Item 3
             </div>
           </div>
         </li>
-        <li class="item red">
+        <li class="item red" data-color="red">
           <div class="item-content">
             <div class="custom-content">
               Item 4
             </div>
           </div>
         </li>
-        <li class="item red">
+        <li class="item red" data-color="red">
           <div class="item-content">
             <div class="custom-content">
               Item 5
             </div>
           </div>
         </li>
-        <li class="item blue">
+        <li class="item blue" data-color="blue">
           <div class="item-content">
             <div class="custom-content">
               Item 6
