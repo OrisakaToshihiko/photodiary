@@ -1,41 +1,49 @@
 document.addEventListener('DOMContentLoaded', function () {
+    const gridElement = document.querySelector('.grid');
     const sortField = document.querySelector('.grid-control-field.sort-field');
     const filterField = document.querySelector('.grid-control-field.filter-field');
+
+    let sortFieldValue;
+
     var grid = new Muuri('.grid', {
         dragEnabled: true,
         showDuration: 600,
         showEasing: 'cubic-bezier(0.215, 0.61, 0.355, 1)',
         sortData: {
+            time(item, element) {
+              return element.getAttribute('data-time') || '';
+            },
             color(item, element) {
                 return element.getAttribute('data-color') || '';
               }
-            // color: function (item, element) {
-            //   return element.getAttribute('data-color');
-            // }
-            // bar: function (item, element) {
-            //   return element.getAttribute('data-bar').toUpperCase();
-            // }
-          }
+          },
+        dragAutoScroll: {
+          targets: [window],
+          sortDuringScroll: false,
+          syncAfterScroll: false,
+        },
       });
 
-      
-    //   grid.refreshSortData();
-    //   grid.sort('color');
+      window.grid = grid;
+
+      //
+      // Grid helper functions
+      //
 
         // Search field binding.
         function initDemo() {
             // Reset field values.
             // searchField.value = '';
             // [sortField, filterField].forEach((field) => {
-            [filterField].forEach((field) => {//この書き方あってるのか？
+            [sortField, filterField].forEach((field) => {//この書き方あってるのか？
               field.value = field.querySelectorAll('option')[0].value; //ここ聞く
             });
         
             // Set inital search query, active filter, active sort value and active layout.
             // searchFieldValue = searchField.value.toLowerCase();
-            // sortFieldValue = sortField.value;
+            sortFieldValue = sortField.value;
         
-            // updateDragState();
+            updateDragState();
         
             // Search field binding.
             // searchField.addEventListener('keyup', function () {
@@ -48,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
         
             // Filter, sort and layout bindings.
             filterField.addEventListener('change', filter);
-            // sortField.addEventListener('change', sort);
+            sortField.addEventListener('change', sort);
             // layoutField.addEventListener('change', updateLayout);
         
             // Add/remove items bindings.
@@ -82,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var currentSort = sortField.value;
         if (sortFieldValue === currentSort) return;
     
-        // updateDragState();
+        updateDragState();
     
         // If we are changing from "order" sorting to something else
         // let's store the drag order.
@@ -92,14 +100,16 @@ document.addEventListener('DOMContentLoaded', function () {
     
         // Sort the items.
         grid.sort(
-          //currentSort === 'title' ? 'title' : currentSort === 'color' ? 'color title' : dragOrder　
+          currentSort === 'time' ? 'time' : currentSort === 'color' ? 'color time' : dragOrder　
           //三項演算子　if elseif else
-          currentSort === color
+          // currentSort === color
         );
     
         // Update active sort value.
         sortFieldValue = currentSort;
       }
+
+
       function updateDragState() {
         if (sortField.value === 'order') {
           gridElement.classList.add('drag-enabled');
