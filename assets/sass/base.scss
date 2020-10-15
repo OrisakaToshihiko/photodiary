@@ -56,7 +56,7 @@ Contents:
 
 $fonts:Arial,"Hiragino Kaku Gothic Pro W3",Meiryo,sans-serif;
 $web_fonts:'Montserrat', sans-serif;
-$bg_color:#fff;
+$bg_color:#e2e1e0;;
 $font_color:#999;
 $link_color:#999;
 $link_hover_color:#777;
@@ -92,46 +92,44 @@ h1{
 
 .grid {
   position: relative;
-  // width:878px;
   max-width:100%;
   margin:0 auto;
   ul {
-    // display: flex;
     position: relative;
   }
 }
 .item {
   display: block;
   position: absolute;
-  width:99px;
-  height:99px;
+  width:320px;
+  height:240px;
   margin: 5px;
   z-index: 1;
-  cursor:move;
+  // cursor:move;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  &:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  }
   &.blue{
     .custom-content{
-      border-color:#0CAAF5;
-      color:#0CAAF5;
+      // border-color:#0CAAF5;
+      // color:#0CAAF5;
     }
   }
   &.red{
     .custom-content{
-      border-color:#F54487;
-      color:#F54487;
+      // border-color:#F54487;
+      // color:#F54487;
     }
   }
   &.green{
     .custom-content{
-      border-color:#00DE73;
-      color:#00DE73;
+      // border-color:#00DE73;
+      // color:#00DE73;
     }
   }
-  &.w2{
-    width:208px;
-  }
-  &.h2{
-    height:208px;
-  }
+
   &:hover {
     animation-play-state: paused;
   }
@@ -148,8 +146,8 @@ h1{
   text-align: center;
   background: #fff;
   color: #666;
-  border:2px solid;
-  border-radius:3px;
+  // border:2px solid;
+  // border-radius:3px;
 }
 
 // If use dragging
@@ -180,6 +178,11 @@ h1{
       height:calc(50vw - 10px);
     }
   }
+}
+
+.popup-content {
+  display: none;
+  position: absolute;
 }
 
 // .grid {

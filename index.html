@@ -16,7 +16,7 @@
     <main>
       <h1>Grid Layout by Muuri.js</h1>
       <div>
-          <select class="grid-control-field filter-field form-control">
+          <!-- <select class="grid-control-field filter-field form-control">
             <option value="" selected="">All</option>
             <option value="red">Red</option>
             <option value="blue">Blue</option>
@@ -26,9 +26,64 @@
             <option value="order" selected="">All</option>
             <option value="time">時間</option>
             <option value="color">色</option>
+          </select> -->
+          <select class="grid-control-field author-field form-control">
+            <option value="" selected="">人で選ぶ</option>
+            <option value="orisaka">折坂</option>
+            <option value="ushirogouchi">後河内</option>
+            <option value="ishido">石動</option>
           </select>
         <ul class="grid">
-        <li class="item blue" data-color="blue" data-time="20201008">
+        <li class="item blue" data-color="blue" data-time="20201008" data-author="orisaka">
+          <div class="item-content">
+            <!-- Safe zone, enter your custom markup -->
+              <div class="custom-content">
+                <img src="http://placehold.jp/320x240.png">
+              </div>
+            <!-- Safe zone ends -->
+          </div>
+        </li>
+        
+        <li class="item red" data-color="red" data-time="20201007" data-author="ishido">
+          <div class="item-content">
+            <div class="custom-content">
+              <img src="http://placehold.jp/320x240.png">
+              <div class="popup-content">
+                <img src="http://placehold.jp/640x480.png">
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="item green" data-color="green" data-time="20201010" data-author="orisaka">
+          <div class="item-content">
+            <div class="custom-content">
+            ori
+            </div>
+          </div>
+        </li>
+        <li class="item red" data-color="red" data-time="20201011" data-author="ushirogouchi">
+          <div class="item-content">
+            <div class="custom-content">
+              ushi
+            </div>
+          </div>
+        </li>
+        <li class="item red" data-color="red" data-time="20201001" data-author="ushirogouchi">
+          <div class="item-content">
+            <div class="custom-content">
+              Item 5
+            </div>
+          </div>
+        </li>
+        <li class="item blue" data-color="blue" data-time="20201002" data-author="orisaka">
+          <div class="item-content">
+            <div class="custom-content">
+              Item 6
+            </div>
+          </div>
+        </li>
+        <li class="item blue" data-color="blue" data-time="20201008" data-author="orisaka">
           <div class="item-content">
             <!-- Safe zone, enter your custom markup -->
               <div class="custom-content">
@@ -38,7 +93,7 @@
           </div>
         </li>
         
-        <li class="item red" data-color="red" data-time="20201007">
+        <li class="item red" data-color="red" data-time="20201007" data-author="ishido">
           <div class="item-content">
             <div class="custom-content">
              C Item 2
@@ -46,28 +101,28 @@
           </div>
         </li>
 
-        <li class="item green" data-color="green" data-time="20201010">
+        <li class="item green" data-color="green" data-time="20201010" data-author="orisaka">
           <div class="item-content">
             <div class="custom-content">
             B Item 3
             </div>
           </div>
         </li>
-        <li class="item red" data-color="red" data-time="20201011">
+        <li class="item red" data-color="red" data-time="20201011" data-author="ushirogouchi">
           <div class="item-content">
             <div class="custom-content">
               Item 4
             </div>
           </div>
         </li>
-        <li class="item red" data-color="red" data-time="20201001">
+        <li class="item red" data-color="red" data-time="20201001" data-author="ushirogouchi">
           <div class="item-content">
             <div class="custom-content">
               Item 5
             </div>
           </div>
         </li>
-        <li class="item blue" data-color="blue" data-time="20201002">
+        <li class="item blue" data-color="blue" data-time="20201002" data-author="orisaka">
           <div class="item-content">
             <div class="custom-content">
               Item 6

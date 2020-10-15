@@ -100,7 +100,7 @@ button::-moz-focus-inner {
 
 body {
   font-family: Arial, "Hiragino Kaku Gothic Pro W3", Meiryo, sans-serif;
-  background-color: #fff;
+  background-color: #e2e1e0;
   color: #999;
   text-align: center; }
   body a, body a:visited {
@@ -125,24 +125,18 @@ h1 {
 .item {
   display: block;
   position: absolute;
-  width: 99px;
-  height: 99px;
+  width: 320px;
+  height: 240px;
   margin: 5px;
   z-index: 1;
-  cursor: move; }
-  .item.blue .custom-content {
-    border-color: #0CAAF5;
-    color: #0CAAF5; }
-  .item.red .custom-content {
-    border-color: #F54487;
-    color: #F54487; }
-  .item.green .custom-content {
-    border-color: #00DE73;
-    color: #00DE73; }
-  .item.w2 {
-    width: 208px; }
-  .item.h2 {
-    height: 208px; }
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  -webkit-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  -o-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
+  .item:hover {
+    -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
   .item:hover {
     -webkit-animation-play-state: paused;
     animation-play-state: paused; }
@@ -158,9 +152,7 @@ h1 {
   vertical-align: middle;
   text-align: center;
   background: #fff;
-  color: #666;
-  border: 2px solid;
-  border-radius: 3px; }
+  color: #666; }
 
 .item.muuri-item-dragging {
   z-index: 3; }
@@ -182,3 +174,7 @@ h1 {
       width: calc(50% - 10px); }
     .item.h2 {
       height: calc(50vw - 10px); } }
+
+.popup-content {
+  display: none;
+  position: absolute; }

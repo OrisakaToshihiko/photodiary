@@ -2,11 +2,13 @@ document.addEventListener('DOMContentLoaded', function () {
     const gridElement = document.querySelector('.grid');
     const sortField = document.querySelector('.grid-control-field.sort-field');
     const filterField = document.querySelector('.grid-control-field.filter-field');
-
+    const authorField = document.querySelector('.grid-control-field.author-field');
+    let dragOrder = [];
     let sortFieldValue;
+    let authorFieldValue;
 
     var grid = new Muuri('.grid', {
-        dragEnabled: true,
+        dragEnabled: false,
         showDuration: 600,
         showEasing: 'cubic-bezier(0.215, 0.61, 0.355, 1)',
         sortData: {
@@ -15,7 +17,10 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             color(item, element) {
                 return element.getAttribute('data-color') || '';
-              }
+              },
+            author(item, element) {
+              return element.getAttribute('data-author') || '';
+            }
           },
         dragAutoScroll: {
           targets: [window],
@@ -35,13 +40,14 @@ document.addEventListener('DOMContentLoaded', function () {
             // Reset field values.
             // searchField.value = '';
             // [sortField, filterField].forEach((field) => {
-            [sortField, filterField].forEach((field) => {//この書き方あってるのか？
+            // [sortField, filterField,authorField].forEach((field) => {
+              [authorField].forEach((field) => {//この書き方あってるのか？
               field.value = field.querySelectorAll('option')[0].value; //ここ聞く
             });
         
             // Set inital search query, active filter, active sort value and active layout.
             // searchFieldValue = searchField.value.toLowerCase();
-            sortFieldValue = sortField.value;
+            // sortFieldValue = sortField.value;
         
             updateDragState();
         
@@ -55,8 +61,9 @@ document.addEventListener('DOMContentLoaded', function () {
             // });
         
             // Filter, sort and layout bindings.
-            filterField.addEventListener('change', filter);
-            sortField.addEventListener('change', sort);
+            // filterField.addEventListener('change', filter);
+            // sortField.addEventListener('change', sort);
+            authorField.addEventListener('change', author);
             // layoutField.addEventListener('change', updateLayout);
         
             // Add/remove items bindings.
@@ -85,6 +92,20 @@ document.addEventListener('DOMContentLoaded', function () {
             );
           }
         
+          function author(onFinish = null) {
+            const authorFieldValue = authorField.value;
+            grid.filter(
+              (item) => {
+                const element = item.getElement();
+
+                const isFilterMatch =
+                  !authorFieldValue || authorFieldValue === element.getAttribute('data-author');
+                return isFilterMatch;
+              },
+              { onFinish: onFinish }
+            );
+          }
+
 
     function sort() {
         var currentSort = sortField.value;
@@ -100,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
         // Sort the items.
         grid.sort(
-          currentSort === 'time' ? 'time' : currentSort === 'color' ? 'color time' : dragOrder　
+          currentSort === 'time' ? 'time' : currentSort === 'color' ? 'color time' :currentSort === 'author' ? 'color author time' : dragOrder　
           //三項演算子　if elseif else
           // currentSort === color
         );
@@ -111,12 +132,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
       function updateDragState() {
-        if (sortField.value === 'order') {
-          gridElement.classList.add('drag-enabled');
-        } else {
-          gridElement.classList.remove('drag-enabled');
-        }
-      }
-      initDemo();
-
-    });
+      //   if (sortField.value === 'order') {
+      //     gridElement.classList.add('drag-enabled');
+      //   } else {
+      //     gridElement.classList.remove('drag-enabled');
+      //   }
+       }
+  initDemo();
+  
+});
