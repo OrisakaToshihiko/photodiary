@@ -139,5 +139,18 @@ document.addEventListener('DOMContentLoaded', function () {
       //   }
        }
   initDemo();
-  
+
+});
+// ウィンドウを開く
+$( '.custom-content' ).each( function() {
+  $( this ).on( 'click', function() {
+       $( this > '.popup-content' ).css({'display':'block'});
+       return;
+  });
+});
+
+// ウィンドウを閉じる
+$( '.js-modal-close' ).on( 'click', function() {
+ $( '.js-modal' ).fadeOut( 300 );
+ return false;
 });
