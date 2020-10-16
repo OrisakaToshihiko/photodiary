@@ -148,6 +148,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // モーダルの表示
   for (let i = 0; i < openModalItem.length; i++) {
     openModalItem[i].onclick = function () {
+      
       // 枠の表示
       modalWrapper.classList.add('modal_visible');
 
