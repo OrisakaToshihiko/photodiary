@@ -178,3 +178,44 @@ h1 {
 .popup-content {
   display: none;
   position: absolute; }
+
+/* ---------------------------------------------
+*   modal
+--------------------------------------------- */
+.item-content {
+  cursor: pointer; }
+
+.modal-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none; }
+  .modal-wrapper .modal-content {
+    display: none; }
+    .modal-wrapper .modal-content.modal-content_visible {
+      display: block; }
+  .modal-wrapper.modal_visible {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+  .modal-wrapper .modal-inner {
+    background-color: #fff;
+    margin: auto;
+    height: 90%;
+    width: 90%;
+    padding: 20px; }
+  .modal-wrapper h2 {
+    font-size: 40px;
+    font-weight: bold; }
+  .modal-wrapper .btn_close {
+    font-size: 30px;
+    font-weight: bold;
+    background-color: pink;
+    cursor: pointer;
+    margin: 0 auto;
+    line-height: 1;
+    padding: 30px; }
