@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>photodiary</title>
+    <script src="https://cdn.jsdelivr.net/npm/web-animations-js@2.3.2/web-animations.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+    <script src="/pd/assets/js/muuri.js"></script>
+    <script src="/pd/assets/js/run.js"></script>
+    <link rel="stylesheet" href="/pd/assets/css/base.css">
+</head>
+<body>
+    <main>
+      <h1>マイイロプスのフォトダイアリー</h1>
+      <div>
+          <select class="grid-control-field author-field form-control">
+            <option value="" selected="">人で選ぶ</option>
+            
+            <option value="ushirogouchi">後河内</option>
+            <option value="takayama">高山</option>
+            <option value="fukushima">福嶋</option>
+            <option value="halimn">ハリム</option>
+          </select>
+        <ul class="grid">
+          <mt:entries category="mylo">
+        <li id="modal<mt:entryid zeropad="6">" class="item" data-time="<mt:entrydate>" data-author="<$mt:EntryAuthorDisplayName$>">
+          <div class="item-content">
+            <!-- Safe zone, enter your custom markup -->
+              <div class="custom-content">
+                <mt:EntryDataphotoasset>
+                <img src="<mt:assetthumbnailurl widht="320">">
+                </mt:EntryDataphotoasset>
+              </div>
+            <!-- Safe zone ends -->
+          </div>
+        </li>
+        </mt:entries>
+        </ul>
+
+        <section id="js-modal" class="modal-wrapper">
+          <div class="modal-inner">
+            <mt:entries>
+            <div id="modal<mt:entryid zeropad="6">-content" class="modal-content">
+              <div>
+                <mt:EntryDataphotoasset>
+                <img src="<mt:assetthumbnailurl width="1000">" width="100%">
+                </mt:EntryDataphotoasset>
+              </div>
+              <h2><mt:entrytitle></h2>
+              <div class="entrybody">
+                <mt:entrybody>
+              </div>
+            </div>
+          </mt:entries>
+            <button id="js-modal_close" class="btn_close" type="button">close<i class="fas fa-window-close"></i></button>
+          </div>
+        </section>
+        
+      </div>
+    </main>
+</body>
+</html>
