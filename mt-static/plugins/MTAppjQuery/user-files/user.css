@@ -1,0 +1,16 @@
+@charset "UTF-8";
+/* ブログ記事編集画面の[表示オプション]を非表示にする */
+/*
+##display-options {
+    display: none;
+}
+*/
+#customfield_entrydataphoto-field {
+  display: block !important;
+}
+
+.tox-toolbar,
+#field-convert_breaks {
+  display: none !important;
+
+}

@@ -1,0 +1,343 @@
+@charset "UTF-8";
+/*!
+ * MTAppjQuery.css for MTAppjQuery 2 (Movable Type Plugin)
+ *
+ * Copyright (c) bit part LLC (https://bit-part.net)
+ *
+ * Since:   2010-07-22
+ * Version: 2.5.1
+ * Update:  2020-08-28
+ *
+ */
+
+/* ----------------------------------------
+   ローディング画像
+---------------------------------------- */
+#mtapp-loading-image {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  z-index: 99999;
+}
+#mtapp-loading-image-backdrop {
+  background-color: rgba(0, 0, 0, 0.46);
+}
+
+/* ----------------------------------------
+   mtapp.modalConfirm
+   mtapp.modalMsg
+---------------------------------------- */
+#mtapp-modal-message,#mtapp-modal-confirm {
+  &[data-mtapp-type="success"] {
+    .modal-header {
+      background-color: #d7e9e6;
+      color: #1e4c43;
+      button.close {
+        color: #1e4c43;
+      }
+    }
+  }
+  &[data-mtapp-type="info"] {
+    .modal-header {
+      background-color: #dff2fb;
+      color: #31627a;
+      button.close {
+        color: #31627a;
+      }
+    }
+  }
+  &[data-mtapp-type="warning"] {
+    .modal-header {
+      background-color: #fce8d8;
+      color: #7d491f;
+      button.close {
+        color: #7d491f;
+      }
+    }
+  }
+  &[data-mtapp-type="error"] {
+    .modal-header {
+      background-color: #f6d7d7;
+      color: #6e1c1d;
+      .mt-icon--error {
+        fill: #d33638;
+      }
+      button.close {
+        color: #6e1c1d;
+      }
+    }
+  }
+}
+
+/* ----------------------------------------
+   サイドバーの開閉ボタン
+---------------------------------------- */
+#mtapp-sidebar-collapse {
+  position: fixed;
+  border: 1px solid #333333;
+  border-top: none;
+  border-right: none;
+  border-bottom-left-radius: 0.25rem;
+  top: 0;
+  right: 0;
+  padding: 3px 6px;
+  z-index: 100000000;
+  opacity: 0.3;
+  cursor: pointer;
+}
+#mtapp-sidebar-collapse:hover {
+  background-color: #e3e3e3;
+  border-color: #ccc;
+  opacity: initial;
+}
+#mtapp-sidebar-collapse svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ----------------------------------------
+   オーバーレイ・リッチエディタ
+---------------------------------------- */
+#mtapp-overlay-editor-modal {
+  z-index: 1040;
+}
+#mtapp-overlay-editor-modal .mce-i-fullscreen {
+  display: none !important;
+}
+.mtapp-overlay-editor *:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* ----------------------------------------
+   マルチフィールド
+---------------------------------------- */
+.mtapp-mf-container {
+  .mtapp-mf-block {
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #d8d8d8;
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    &:last-child {
+      margin-bottom: 0;
+      border-bottom: none;
+    }
+  }
+  .mtapp-overlay-editor img {
+    max-width: 100%;
+    height: auto;
+  }
+  .mtapp-mf-table-vertical {
+    margin-bottom: 0;
+    border-bottom: 0;
+    th {
+      background: #F4F4F4;
+      border-top: 0;
+      border-bottom: 1px solid #CACACA;
+      color: #2F2F2F;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+    tr:last-child th {
+      border-bottom: none;
+    }
+  }
+  .mtapp-mf-footer {
+    .d-block + .d-block {
+      margin-top: .5rem;
+    }
+  }
+}
+
+/* ----------------------------------------
+   VueContentData
+---------------------------------------- */
+.mtapp-contentData {
+  .mtapp-contentData-selected {
+    .btn {
+      border-style: dotted !important;
+    }
+    div {
+      margin-top: .5rem !important;
+    }
+  }
+  .mtapp-disabled-button {
+    border-top-color: #ffffff !important;
+    border-bottom-color: #ffffff !important;
+    cursor: initial !important;
+  }
+}
+
+/* ----------------------------------------
+   アセット・フィールド
+---------------------------------------- */
+#mtapp-asset-field-data,
+#mtapp-asset-field {
+  display: none;
+}
+.mtapp-assetField-file-icon {
+  width: 50px;
+  height: 50px;
+}
+
+/* ----------------------------------------
+   ツールチップ
+---------------------------------------- */
+#mtapp-tooltip {
+  padding: 8px 10px;
+  border-radius: 3px;
+  -moz-box-shadow: 2px 2px 10px #ABABAB;
+  -webkit-box-shadow: 2px 2px 10px #ABABAB;
+}
+
+/* ----------------------------------------
+   removeVal
+---------------------------------------- */
+img.mtapp-remove-val-btn {
+  display: block;
+  position: absolute;
+  right: 3px;
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+}
+
+/* ----------------------------------------
+   showHint
+---------------------------------------- */
+.balloon {
+  position: absolute;
+  z-index: 99;
+}
+#related-content .balloon {
+  max-width: 258px;
+}
+.balloon-content {
+  position: relative;
+  padding: 13px;
+  border-radius: 3px;
+  background-color: #FAC833;
+  box-shadow: 0px 2px 3px #888;
+  -moz-box-shadow: 0px 2px 3px #888;
+  -webkit-box-shadow: 0px 2px 3px #888;
+}
+.balloon .balloon-arrow {
+  position: absolute;
+  left: 20px;
+  width: 19px;
+  height: 10px;
+}
+.balloon .balloon-arrow div {
+  margin: 0 auto;
+  display: block;
+  height: 1px;
+  background: #FAC833;
+  line-height: 0px;
+  font-size: 0px;
+  box-shadow: 0px 2px 3px #888;
+  -moz-box-shadow: 0px 2px 3px #888;
+  -webkit-box-shadow: 0px 2px 3px #888;
+}
+.balloon .balloon-arrow .line10 { width: 19px; }
+.balloon .balloon-arrow .line9  { width: 17px; }
+.balloon .balloon-arrow .line8  { width: 15px; }
+.balloon .balloon-arrow .line7  { width: 13px; }
+.balloon .balloon-arrow .line6  { width: 11px; }
+.balloon .balloon-arrow .line5  { width: 9px; }
+.balloon .balloon-arrow .line4  { width: 7px; }
+.balloon .balloon-arrow .line3  { width: 5px; }
+.balloon .balloon-arrow .line2  { width: 3px; }
+.balloon .balloon-arrow .line1  { width: 1px; }
+
+/* ----------------------------------------
+   汎用クラス
+---------------------------------------- */
+.hidden {
+  display: none;
+}
+
+/* ----------------------------------------
+   MTAppSuggest
+---------------------------------------- */
+.field-suggestion {
+  position: relative;
+  top: -1px;
+  left: 2px;
+  width: 100%;
+}
+.field-suggestion .field_completion {
+  min-width: 200px;
+  max-width: 100%;
+  position: absolute;
+  z-index: 50;
+  border: 1px solid #C0C6C9;
+  background-color: #F3F3F3;
+}
+.field-suggestion .field_completion div {
+  padding: 2px 5px;
+}
+.field-suggestion .field_completion div.complete-highlight {
+  color: #2B2B2B;
+  background-color: #DCDDDD;
+}
+
+/* ----------------------------------------
+   MTAppJSONTable
+---------------------------------------- */
+.jsontable-table .mt-table-thead-th {
+  background: #F4F4F4;
+  border-top: 0;
+  border-bottom: 1px solid #CACACA;
+  color: #2F2F2F;
+  font-weight: bold;
+  white-space: nowrap;
+}
+.jsontable-table .jsontable-cb-cell,
+.jsontable-table .jsontable-sort-handle {
+  width: 3rem !important;
+  vertical-align: middle !important;
+  text-align: center !important;
+}
+.jsontable-table .jsontable-sort-handle svg {
+  margin: 0px !important;
+}
+.jsontable-table .jsontable-selected-data {
+  background-color: #e7e7eb !important;
+}
+.jsontable-table.jsontable-cell-merge td:hover,
+.jsontable-table.jsontable-cell-merge td.merge-target {
+  background-color: #FFD518;
+}
+.jsontable-table img {
+  max-width: 100%;
+}
+
+/* ----------------------------------------
+   MTAppLineBreakField（非推奨：削除予定）
+---------------------------------------- */
+span.mtapp-linebreak-field-item {
+  display: block;
+  position: relative;
+  margin-bottom: 5px;
+}
+span.mtapp-linebreak-field-item-inner {
+  position: relative;
+}
+img.mtapp-linebreak-field-add {
+  position: absolute;
+  top: 0;
+  right: 2px;
+  cursor: pointer;
+}
+/* options - sortable: true*/
+div.mtapp-sortable span.mtapp-linebreak-field-item {
+  padding-left: 18px;
+  background: url(../images/arrow-move.png) no-repeat center left;
+  cursor: move;
+}
