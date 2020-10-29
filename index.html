@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="jp">
 <head>
@@ -6,167 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>photodiary</title>
-    <script src="https://cdn.jsdelivr.net/npm/web-animations-js@2.3.2/web-animations.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/web-animations-js@2.3.2/web-animations.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
-    <script src="/assets/js/muuri.js"></script>
-    <script src="/assets/js/run.js"></script>
-    <link rel="stylesheet" href="/assets/css/base.css">
+    <script src="/assets/js/muuri.js"></script> -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+    <!-- <script src="/assets/js/run.js"></script> -->
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/base.css">
 </head>
 <body>
+    <header><h1>Photodiary</h1></header>
     <main>
-      <h1>Grid Layout by Muuri.js</h1>
       <div>
-          <!-- <select class="grid-control-field filter-field form-control">
-            <option value="" selected="">All</option>
-            <option value="red">Red</option>
-            <option value="blue">Blue</option>
-            <option value="green">Green</option>
-          </select>
-          <select class="grid-control-field sort-field form-control">
-            <option value="order" selected="">All</option>
-            <option value="time">時間</option>
-            <option value="color">色</option>
-          </select> -->
-          <select class="grid-control-field author-field form-control">
-            <option value="" selected="">人で選ぶ</option>
-            <option value="orisaka">折坂</option>
-            <option value="ushirogouchi">後河内</option>
-            <option value="ishido">石動</option>
-          </select>
         <ul class="grid">
-        <li id="modal001" class="item blue" data-color="blue" data-time="20201008" data-author="orisaka">
-          <div class="item-content">
-            <!-- Safe zone, enter your custom markup -->
-              <div class="custom-content">
-                <img src="http://placehold.jp/320x240.png">
+        <li id="modal001" class="item" data-time="20201008" data-author="orisaka">
+            <div class="item-wrapper">
+              <div class="pic-wrapper">
+                <img src="http://placehold.jp/700x700.png">
               </div>
-            <!-- Safe zone ends -->
-          </div>
-        </li>
-
-        <li id="modal002" class="item red" data-color="red" data-time="20201007" data-author="ishido">
-          <div class="item-content">
-            <div class="custom-content">
-              <img src="http://placehold.jp/320x240.png">
-            </div>
-          </div>
-        </li>
-
-        <li id="modal003" class="item green" data-color="green" data-time="20201010" data-author="orisaka">
-          <div class="item-content">
-            <div class="custom-content">
-            ori
-            </div>
-          </div>
-        </li>
-        <li id="modal004" class="item red" data-color="red" data-time="20201011" data-author="ushirogouchi">
-          <div class="item-content">
-            <div class="custom-content">
-              ushi
-            </div>
-          </div>
-        </li>
-        <li id="modal005" class="item red" data-color="red" data-time="20201001" data-author="ushirogouchi">
-          <div class="item-content">
-            <div class="custom-content">
-              Item 5
-            </div>
-          </div>
-        </li>
-        <li id="modal006" class="item blue" data-color="blue" data-time="20201002" data-author="orisaka">
-          <div class="item-content">
-            <div class="custom-content">
-              Item 6
-            </div>
-          </div>
-        </li>
-        <li id="modal006" class="item blue" data-color="blue" data-time="20201008" data-author="orisaka">
-          <div class="item-content">
-            <!-- Safe zone, enter your custom markup -->
-              <div class="custom-content">
-              A Item 1
+              <div class="item-content">
+                <h2>写真のタイトル</h2>
+                <h3>orisaka</h3>
+                <p>ここに本文ここに本文ここに本文ここに本文ここに本文ここに本文ここに本文ここに本文ここに本文ここに本文ここに本文ここに本文ここに本文ここに本文ここに本文</p>
               </div>
-            <!-- Safe zone ends -->
-          </div>
+            </div>
         </li>
-
-        <li id="modal007" class="item red" data-color="red" data-time="20201007" data-author="ishido">
-          <div class="item-content">
-            <div class="custom-content">
-             C Item 2
+        <li id="modal001" class="item" data-time="20201008" data-author="orisaka">
+            <div class="item-wrapper">
+                <div class="pic-wrapper">
+              <img src="http://placehold.jp/700x700.png">
+                </div>
+              <div class="item-content">
+                <h2>写真のタイトル</h2>
+                <h3>orisaka</h3>
+                <p>ここに本文ここに本文ここに本文ここに本文ここに本文ここに本文ここに本文ここに本文ここに本文ここに本文ここに本文ここに本文ここに本文ここに本文ここに本文</p>
+              </div>
             </div>
-          </div>
         </li>
-
-        <li id="modal008" class="item green" data-color="green" data-time="20201010" data-author="orisaka">
-          <div class="item-content">
-            <div class="custom-content">
-            B Item 3
-            </div>
-          </div>
-        </li>
-        <li id="modal009" class="item red" data-color="red" data-time="20201011" data-author="ushirogouchi">
-          <div class="item-content">
-            <div class="custom-content">
-              Item 4
-            </div>
-          </div>
-        </li>
-        <li id="modal010" class="item red" data-color="red" data-time="20201001" data-author="ushirogouchi">
-          <div class="item-content">
-            <div class="custom-content">
-              Item 5
-            </div>
-          </div>
-        </li>
-        <li id="modal011" class="item blue" data-color="blue" data-time="20201002" data-author="orisaka">
-          <div class="item-content">
-            <div class="custom-content">
-              Item 6
-            </div>
-          </div>
-        </li>
-        </ul>
-
-        <section id="js-modal" class="modal-wrapper">
-          <div class="modal-inner">
-            <div id="modal001-content" class="modal-content">
-              <h2>モーダル見出し　No.1</h2>
-            </div>
-            <div id="modal002-content" class="modal-content">
-              <h2>モーダル見出し　No.2</h2>
-            </div>
-            <div id="modal003-content" class="modal-content">
-              <h2>モーダル見出し　No.3</h2>
-            </div>
-            <div id="modal004-content" class="modal-content">
-              <h2>モーダル見出し　No.4</h2>
-            </div>
-            <div id="modal005-content" class="modal-content">
-              <h2>モーダル見出し　No.5</h2>
-            </div>
-            <div id="modal006-content" class="modal-content">
-              <h2>モーダル見出し　No.6</h2>
-            </div>
-            <div id="modal007-content" class="modal-content">
-              <h2>モーダル見出し　No.7</h2>
-            </div>
-            <div id="modal008-content" class="modal-content">
-              <h2>モーダル見出し　No.8</h2>
-            </div>
-            <div id="modal009-content" class="modal-content">
-              <h2>モーダル見出し　No.9</h2>
-            </div>
-            <div id="modal010-content" class="modal-content">
-              <h2>モーダル見出し　No.10</h2>
-            </div>
-            <div id="modal011-content" class="modal-content">
-              <h2>モーダル見出し　No.11</h2>
-            </div>
-            <button id="js-modal_close" class="btn_close" type="button">閉じる</button>
-          </div>
-        </section>
-        
+        </ul>        
       </div>
     </main>
 </body>
